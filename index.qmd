@@ -1,6 +1,6 @@
 
 
-## Guidelines
+### Guidelines
 
 -	CSV (comma delimited)
 -	All values double quoted, even headers
@@ -8,7 +8,7 @@
 -	Check data for spelling errors & missing or impossible values
 -	Open CSV in notepad (or any plain text editor) to check data is correctly formatted
 
-## Formatting
+### Formatting
 
 - dates
 - phone #'s

@@ -26,5 +26,26 @@
     "title": "Uploading Metadata",
     "section": "Quarto NOTES",
     "text": "Quarto NOTES\nLinking\nWhen creating links between pages in your site, you can provide the source file as the link target (rather than the .html file). You can also add hash identifiers (#) to the source file if you want to link to a particular section in the document. For example:\nLinks\nFAQ’s"
+  },
+  {
+    "objectID": "FAQs.html",
+    "href": "FAQs.html",
+    "title": "FAQ’s",
+    "section": "",
+    "text": "[text here]"
+  },
+  {
+    "objectID": "Links.html",
+    "href": "Links.html",
+    "title": "Uploading Metadata",
+    "section": "",
+    "text": "Double Quotes"
+  },
+  {
+    "objectID": "Links.html#r-python",
+    "href": "Links.html#r-python",
+    "title": "Uploading Metadata",
+    "section": "R / Python",
+    "text": "R / Python"
   }
 ]
