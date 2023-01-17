@@ -1,5 +1,9 @@
 /*-- scss:defaults --*/
 
+$min-contrast-ratio:   3.6 !default;
+
+$content-padding-top: 3;
+
 $link-color: #2790E8;
 
 $navbar-hl: #2790E8;
@@ -7,5 +11,13 @@ $navbar-hl: #2790E8;
 $toc-color: #2790E8;
 $toc-active-border: #2790E8;
 $toc-inactive-border: #EAEAD6;
+
+$navbar-dark-hover-color:       rgba(#191970, 1) !default;
+$navbar-light-hover-color:      rgba(#191970, 1) !default;
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
+}
 
 //https://quarto.org/docs/output-formats/html-themes.html

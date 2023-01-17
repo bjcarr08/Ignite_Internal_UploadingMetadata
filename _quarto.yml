@@ -6,7 +6,7 @@ project:
 website:
   title: "Uploading Metadata"
   navbar:
-    right: 
+    left: 
       - href: index.qmd
         text: Home
       - href: FAQs.qmd
