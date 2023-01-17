@@ -57,6 +57,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -96,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -104,20 +107,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#guidelines" id="toc-guidelines" class="nav-link active" data-scroll-target="#guidelines">Guidelines</a></li>
-  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a></li>
+  <li><a href="#guidelines" id="toc-guidelines" class="nav-link active" data-scroll-target="#guidelines">Guidelines</a>
+  <ul>
+  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general">General</a></li>
+  <li><a href="#audio" id="toc-audio" class="nav-link" data-scroll-target="#audio">Audio</a></li>
+  <li><a href="#meta" id="toc-meta" class="nav-link" data-scroll-target="#meta">Meta</a></li>
+  </ul></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   <li><a href="#quarto-notes" id="toc-quarto-notes" class="nav-link" data-scroll-target="#quarto-notes">Quarto NOTES</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
-<section id="guidelines" class="level3">
-<h3 data-anchor-id="guidelines">Guidelines</h3>
+<section id="guidelines" class="level2">
+<h2 data-anchor-id="guidelines">Guidelines</h2>
 <ul>
 <li>CSV (comma delimited)</li>
 <li>All values double quoted, even headers</li>
@@ -125,26 +132,93 @@ ul.task-list li input[type="checkbox"] {
 <li>Check data for spelling errors &amp; missing or impossible values</li>
 <li>Open CSV in notepad (or any plain text editor) to check data is correctly formatted</li>
 </ul>
-</section>
-<section id="formatting" class="level3">
-<h3 data-anchor-id="formatting">Formatting</h3>
+<section id="general" class="level3">
+<h3 data-anchor-id="general">General</h3>
 <ul>
-<li>dates</li>
-<li>phone #’s</li>
-<li>etc</li>
+<li>files are deleted from our FTP after 14 days (but all files are still recorded in Lucid)</li>
+<li>do not upload zipped files</li>
+<li>do not create/upload to subfolders</li>
+<li>refresh window looks back 10 days to find new audio posted.</li>
+<li>preferably, meta should be uploaded Just after the audio, but it MUST be uploaded within the refresh window in order for Lucid to properly display data in the UI.</li>
 </ul>
 </section>
-<section id="examples" class="level3">
-<h3 data-anchor-id="examples">Examples</h3>
-<p>some visual examples here…</p>
+<section id="audio" class="level3">
+<h3 data-anchor-id="audio">Audio</h3>
 <ul>
-<li>flowchart</li>
+<li>audio should be .wav or .mp3</li>
+<li>for best performance we recommend not compressing the audio to &lt; 128 kbps</li>
+<li>filenames must be unique</li>
+<li>if filenames contain metadata they should all follow the same format</li>
+<li>do not alter audio filenames</li>
+</ul>
+</section>
+<section id="meta" class="level3">
+<h3 data-anchor-id="meta">Meta</h3>
+<p>Lucid includes the capability to associate various metadata categories with each call. Metadata should support as many fields as possible and a definition of those that are not self-explanatory should be provided. Examples: Call Center, Product/Brand, Agent Name, Customer Name, Address, Customer Ani, Order Status, Disposition, etc. This data can be provided via an associated .csv file or provided within the audio filenames.</p>
+<p><strong>If provided via audio filenames:</strong></p>
+<ul>
+<li>Direction on file naming convention where Ignite will extract that information.</li>
+<li>As an example: file name may be “product_agentName_orderStatus_disposition_date.mp3”</li>
+<li>filenames must be unique</li>
+</ul>
+<p><strong>If provided via .csv file:</strong></p>
+<ul>
+<li>file should be posted to the SFTP site (same as audio files)</li>
+<li>filenames must be unique</li>
+<li>meta filenames must match 1:1 with audio filenames</li>
+<li>all values (and headers) must be double quoted</li>
+<li>headers should not contain any whitespace or special characters (/’!-,&gt;…etc)</li>
+<li>sep = ‘,’</li>
+<li>EOL = line break / new line</li>
+<li>metadata is mapped into lucid via column number, so do not alter column order (additional columns should be added to the end)</li>
+<li>date values must be formatted as date time – “5/7/2021 12:00:00” (use military time to avoid adding AM/PM)</li>
+<li>adding an agent ID number instead of agent name will help mitigate any ambiguity that may arise from different agent name spellings</li>
+</ul>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2 data-anchor-id="examples">Examples</h2>
+<ul>
 <li>diagrams</li>
-<li>screenshots of sample data</li>
+<li>good (and bad) sample data</li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'theme': 'base', 'useMaxWidth': 'false', 'themeVariables': { 'background': '#FAFAF5', 'primaryColor': '#EAEAD6', 'nodeBorder': '#8B814C', 'lineColor': '#8B814C', 'primaryTextColor': '#191970', 'textColor': '#191970', 'fontSize': '12px', 'secondaryColor': '#FAFAF5'}}}%%
+flowchart LR
+A&gt;filename]:::name -- "&amp;nbspcriteria&amp;nbsp" --&gt; B[must be unique&lt;br/&gt;must match audio filenames] -- "&amp;nbspexample&amp;nbsp" --&gt; C["#quot;product_agentName_orderStatus_date.mp3#quot;"]
+classDef name fill:#191970,stroke:#191970,color:#FAFAF5
+style B text-align:left
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">%%{init: {'theme': 'base', 'themeVariables': { 'background': '#FAFAF5', 'primaryColor': '#EAEAD6', 'nodeBorder': '#8B814C', 'lineColor': '#8B814C', 'primaryTextColor': '#191970', 'textColor': '#191970', 'fontSize': '12px', 'secondaryColor': '#FAFAF5'}}}%%
+flowchart LR
+D&gt;"call date"]:::name -- "&amp;nbspcriteria&amp;nbsp" --&gt; E[format as date time&lt;br/&gt;use military time to avoid AM PM] -- "&amp;nbspexample&amp;nbsp" --&gt; F["#quot;5#47;7#47;2021 13:20:00#quot;"]
+classDef name fill:#191970,stroke:#191970,color:#FAFAF5
+style E text-align:left
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
 </section>
-<section id="quarto-notes" class="level3">
-<h3 data-anchor-id="quarto-notes">Quarto NOTES</h3>
+<section id="quarto-notes" class="level2">
+<h2 data-anchor-id="quarto-notes">Quarto NOTES</h2>
 <p><strong>Linking</strong></p>
 <p>When creating links between pages in your site, you can provide the source file as the link target (rather than the .html file). You can also add hash identifiers (#) to the source file if you want to link to a particular section in the document. For example:</p>
 <p><a href="./Links.html">Links</a></p>

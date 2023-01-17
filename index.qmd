@@ -1,6 +1,6 @@
 
 
-### Guidelines
+## Guidelines
 
 -	CSV (comma delimited)
 -	All values double quoted, even headers
@@ -8,21 +8,77 @@
 -	Check data for spelling errors & missing or impossible values
 -	Open CSV in notepad (or any plain text editor) to check data is correctly formatted
 
-### Formatting
 
-- dates
-- phone #'s
-- etc
+### General
 
-### Examples
+-	files are deleted from our FTP after 14 days (but all files are still recorded in Lucid)
+-	do not upload zipped files
+-	do not create/upload to subfolders
+-	refresh window looks back 10 days to find new audio posted.
+-	preferably, meta should be uploaded Just after the audio, but it MUST be uploaded within the refresh window in order for Lucid to properly display data in the UI.
 
-some visual examples here...
+### Audio
 
-- flowchart
+-	audio should be .wav or .mp3
+-	for best performance we recommend not compressing the audio to < 128 kbps
+-	filenames must be unique
+-	if filenames contain metadata they should all follow the same format
+-	do not alter audio filenames
+
+### Meta
+
+Lucid includes the capability to associate various metadata categories with each call. 
+Metadata should support as many fields as possible and a definition of those that are not self-explanatory should be provided.
+Examples: Call Center, Product/Brand, Agent Name, Customer Name, Address, Customer Ani, Order Status, Disposition, etc.
+This data can be provided via an associated .csv file or provided within the audio filenames.  
+
+**If provided via audio filenames:**
+
+- Direction on file naming convention where Ignite will extract that information.
+- As an example:  file name may be "product_agentName_orderStatus_disposition_date.mp3"
+- filenames must be unique
+
+**If provided via .csv file:**
+
+- file should be posted to the SFTP site (same as audio files)
+- filenames must be unique
+- meta filenames must match 1:1 with audio filenames
+- all values (and headers) must be double quoted
+- headers should not contain any whitespace or special characters (/'!-,>...etc)
+- sep = ','
+- EOL = line break / new line
+- metadata is mapped into lucid via column number, so do not alter column order (additional columns should be added to the end) 
+- date values must be formatted as date time – “5/7/2021 12:00:00” (use military time to avoid adding AM/PM)
+- adding an agent ID number instead of agent name will help mitigate any ambiguity that may arise from different agent name spellings
+
+
+
+
+## Examples
+
 - diagrams
-- screenshots of sample data
+- good (and bad) sample data
 
-### Quarto NOTES
+
+```{mermaid}
+%%{init: {'theme': 'base', 'useMaxWidth': 'false', 'themeVariables': { 'background': '#FAFAF5', 'primaryColor': '#EAEAD6', 'nodeBorder': '#8B814C', 'lineColor': '#8B814C', 'primaryTextColor': '#191970', 'textColor': '#191970', 'fontSize': '12px', 'secondaryColor': '#FAFAF5'}}}%%
+flowchart LR
+A>filename]:::name -- "&nbspcriteria&nbsp" --> B[must be unique<br/>must match audio filenames] -- "&nbspexample&nbsp" --> C["#quot;product_agentName_orderStatus_date.mp3#quot;"]
+classDef name fill:#191970,stroke:#191970,color:#FAFAF5
+style B text-align:left
+```
+
+
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': { 'background': '#FAFAF5', 'primaryColor': '#EAEAD6', 'nodeBorder': '#8B814C', 'lineColor': '#8B814C', 'primaryTextColor': '#191970', 'textColor': '#191970', 'fontSize': '12px', 'secondaryColor': '#FAFAF5'}}}%%
+flowchart LR
+D>"call date"]:::name -- "&nbspcriteria&nbsp" --> E[format as date time<br/>use military time to avoid AM PM] -- "&nbspexample&nbsp" --> F["#quot;5#47;7#47;2021 13:20:00#quot;"]
+classDef name fill:#191970,stroke:#191970,color:#FAFAF5
+style E text-align:left
+```
+
+
+## Quarto NOTES
 
 **Linking**
 
