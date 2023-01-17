@@ -14,7 +14,7 @@
 - phone #'s
 - etc
 
-## Examples
+### Examples
 
 some visual examples here...
 
@@ -22,7 +22,7 @@ some visual examples here...
 - diagrams
 - screenshots of sample data
 
-## Quarto NOTES
+### Quarto NOTES
 
 **Linking**
 

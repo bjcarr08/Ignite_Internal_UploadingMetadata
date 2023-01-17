@@ -1,10 +1,8 @@
----
-title: "Helpful Links"
----
-## Excel
+
+### Excel
 
 [Double Quotes](https://docs.microsoft.com/en-US/office/troubleshoot/excel/export-text-file-with-comma-quote)
 
 
-## R / Python
+
 
