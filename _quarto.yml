@@ -15,11 +15,13 @@ website:
     search: true
     pinned: true
 
+
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+    toc-location: left
     highlight: pygments
     anchor-sections: false
     smooth-scroll: true
