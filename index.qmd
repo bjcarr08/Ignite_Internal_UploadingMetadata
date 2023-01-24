@@ -63,7 +63,7 @@ This data can be provided via an associated .csv file or provided within the aud
 ```{mermaid}
 %%{init: {'theme': 'base', 'useMaxWidth': 'false', 'themeVariables': { 'background': '#FAFAF5', 'primaryColor': '#EAEAD6', 'nodeBorder': '#8B814C', 'lineColor': '#8B814C', 'primaryTextColor': '#191970', 'textColor': '#191970', 'fontSize': '12px', 'secondaryColor': '#FAFAF5'}}}%%
 flowchart LR
-A>filename]:::name -- "&nbspcriteria&nbsp" --> B[must be unique<br/>must match audio filenames] -- "&nbspexample&nbsp" --> C["#quot;product_agentName_orderStatus_date.mp3#quot;"]
+A>filename]:::name -- "&nbspcriteria&nbsp" --> B[&#x2022; must be unique<br/>&#x2022; must match audio filenames] -- "&nbspexample&nbsp" --> C["#quot;product_agentName_orderStatus_date.mp3#quot;"]
 classDef name fill:#191970,stroke:#191970,color:#FAFAF5
 style B text-align:left
 ```
@@ -72,7 +72,7 @@ style B text-align:left
 ```{mermaid}
 %%{init: {'theme': 'base', 'themeVariables': { 'background': '#FAFAF5', 'primaryColor': '#EAEAD6', 'nodeBorder': '#8B814C', 'lineColor': '#8B814C', 'primaryTextColor': '#191970', 'textColor': '#191970', 'fontSize': '12px', 'secondaryColor': '#FAFAF5'}}}%%
 flowchart LR
-D>"call date"]:::name -- "&nbspcriteria&nbsp" --> E[format as date time<br/>use military time to avoid AM PM] -- "&nbspexample&nbsp" --> F["#quot;5#47;7#47;2021 13:20:00#quot;"]
+D>"call date"]:::name -- "&nbspcriteria&nbsp" --> E[&#x2022; format as date time<br/>&#x2022; use military time to avoid AM PM] -- "&nbspexample&nbsp" --> F["#quot;5#47;7#47;2021 13:20:00#quot;"]
 classDef name fill:#191970,stroke:#191970,color:#FAFAF5
 style E text-align:left
 ```
